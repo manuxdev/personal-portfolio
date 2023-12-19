@@ -30,8 +30,8 @@ const EmailSecction = () => {
     };
     //   console.log(options.body);
     const response = await fetch(endpoint, options);
-    const resData = await response.json();
-    console.log(resData);
+    // const resData = await response.json();
+    // console.log(resData);
 
     if (response.status === 200) {
       console.log("Message sent.");
@@ -40,12 +40,12 @@ const EmailSecction = () => {
   };
   return (
     <section
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4"
+      className="grid md:grid-cols-2 my-12 md:my-12 py-12 gap-4"
       id="contacts"
     >
       <div>
         <h5 className="text-xl font-bold my-2">Let{"'"}s Connect</h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
+        <p className="text-[#ADB7BE] mb-4 max-w-md text-sm md:text-base">
           Aliqua proident aute veniam cillum et fugiat do irure culpa mollit ad
           est ex aliquip proident. Ex irure exercitation culpa ad reprehenderit
           fugiat tempor sint cupidatat irure mollit ex ea voluptate. Nulla minim
@@ -55,13 +55,17 @@ const EmailSecction = () => {
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href={"/"}>
-            <Image src={GithubIcon} alt="Github Icon" className="w-12 h-12" />
+            <Image
+              src={GithubIcon}
+              alt="Github Icon"
+              className="md:w-12 md:h-12 w-10 h-10"
+            />
           </Link>
           <Link href={"/"}>
             <Image
               src={LinkedinIcon}
               alt="Linkedin Icon"
-              className="w-12 h-12"
+              className="md:w-12 md:h-12 w-10 h-10"
             />
           </Link>
         </div>

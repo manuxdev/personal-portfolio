@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="container mx-auto mt-24 px-12 py-6">
+    <div className="container mx-auto mt-24 md:px-12 px-6 py-2">
       <Navbar />
       <HeroSection />
       <Achivement />

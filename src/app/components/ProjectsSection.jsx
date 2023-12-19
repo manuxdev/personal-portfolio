@@ -96,7 +96,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section className="mt-60 md:mt-[-80px]" id="projects">
+    <section className="mt-28 md:mt-[-80px]" id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-4">
         My Projects
       </h2>

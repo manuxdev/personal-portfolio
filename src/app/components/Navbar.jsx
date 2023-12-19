@@ -40,7 +40,7 @@ const Navbar = () => {
           {navbarOpen ? (
             <button
               onClick={handlerChange}
-              className="flex items-center p-2 border rounded border-slate-200  text-slate-200 hover:text-white hover:border-white "
+              className="flex items-center p-2 border rounded border-slate-200  text-slate-200 hover:text-white hover:border-white"
             >
               <XMarkIcon className="h-6 w-6" />
             </button>

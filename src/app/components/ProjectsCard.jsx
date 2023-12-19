@@ -30,23 +30,23 @@ const ProjectsCard = ({
         ></div>
       </Link>
 
-      <div className="rounded-b-xl mt-2 bg-[#181818] py-6 px-4 flex flex-row justify-between items-center">
+      <div className="rounded-b-xl mt-1 bg-[#181818] md:py-6 py-3 px-4 flex flex-row justify-between items-center">
         <div>
-          <h5 className="text-xl font-semibold mb-2">{title}</h5>
-          <p className="text-[#ADB7BE]">{description}</p>
+          <h5 className="md:text-xl text-base font-semibold mb-2">{title}</h5>
+          <p className="text-[#ADB7BE] md:text-base text-sm">{description}</p>
         </div>
         <div className="flex items-center  justify-between ">
           <Link
-            href={gitUrl}
-            className="h-10 w-10 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-governor-bay-500 group/link transition-all"
+            href=""
+            className="md:h-10 h-8 md:w-10 w-8 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-governor-bay-500 group/link transition-all"
           >
-            <CodeBracketIcon className="h-6 w-6 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-governor-bay-500"></CodeBracketIcon>
+            <CodeBracketIcon className="md:h-6 md:w-6 h-4 w-4 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-governor-bay-500"></CodeBracketIcon>
           </Link>
           <Link
-            href={previewUrl}
-            className="h-10 w-10 border-2 relative rounded-full border-[#ADB7BE] hover:border-governor-bay-500 group/link transition-all"
+            href=""
+            className="md:h-10 h-8 md:w-10 w-8 border-2 relative rounded-full border-[#ADB7BE] hover:border-governor-bay-500 group/link transition-all"
           >
-            <EyeIcon className="h-8 w-8 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-governor-bay-500"></EyeIcon>
+            <EyeIcon className="md:h-6 md:w-6 h-4 w-4 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-governor-bay-500"></EyeIcon>
           </Link>
         </div>
       </div>

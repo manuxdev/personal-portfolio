@@ -8,7 +8,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 text-sm md:text-base">
         <li>HTML</li>
         <li>CSS</li>
         <li>ReactJS</li>
@@ -23,7 +23,7 @@ const TAB_DATA = [
     title: "Certifications",
     id: "Certifications",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 text-sm md:text-base">
         <li>Primary Graduate</li>
         <li>High school graduate</li>
         <li>Pre-University Graduate</li>
@@ -35,7 +35,7 @@ const TAB_DATA = [
     title: "Experience",
     id: "Experience",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="list-disc pl-2 text-sm md:text-base">
         <li>Creation of website for transportation.</li>
         <li>Web application design.</li>
         <li>Grocer.</li>
@@ -67,8 +67,8 @@ const AboutSecction = () => {
           className="mt-2"
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full ">
-          <h2 className="text-4xl font-bold mb-4">About Me</h2>
-          <p className="text-base lg:text-lg">
+          <h2 className="md:text-4xl text-3xl font-bold mb-4">About Me</h2>
+          <p className="text-sm lg:text-lg">
             Student at the University of Computer Science, passionate about
             learning and applying my knowledge in the real world. I am looking
             for a work environment that allows me to grow professionally and
@@ -94,7 +94,7 @@ const AboutSecction = () => {
               Experience
             </TabButton>
           </div>
-          <div className="mt-8 ">
+          <div className="md:mt-8 mt-4">
             {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
