@@ -4,10 +4,13 @@ import { CodeBracketIcon } from "@heroicons/react/24/outline";
 import { ChevronLeftIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 EyeIcon;
 
 const ProjectPage = () => {
+  const router = useRouter();
+  const { valor } = router.query;
   const cardVariants = {
     initial: { y: 100, opacity: 0 },
     animate: { y: 0, opacity: 1 },
@@ -15,6 +18,7 @@ const ProjectPage = () => {
 
   return (
     <div className="">
+      <div>{valor}</div>
       <motion.div
         variants={cardVariants}
         initial="initial"
