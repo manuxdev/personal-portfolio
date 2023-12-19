@@ -1,12 +1,48 @@
-import React from "react";
+"use client";
+
+import { useState } from "react";
 import GithubIcon from "../../../public/github.svg";
 import LinkedinIcon from "../../../public/linkedin.svg";
 import Link from "next/link";
 import Image from "next/image";
 
 const EmailSecction = () => {
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = {
+      email: e.target.email.value,
+      subject: e.target.subject.value,
+      message: e.target.message.value,
+    };
+
+    const JSONdata = JSON.stringify(data);
+    const endpoint = "/api/send";
+
+    const options = {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "aplication/json",
+      },
+
+      body: JSONdata,
+    };
+
+    const response = await fetch(endpoint, options);
+    const resData = await response.json();
+
+    if (response.status === 200) {
+      console.log("Message sent.");
+      setEmailSubmitted(true);
+    }
+  };
   return (
-    <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4">
+    <section
+      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4"
+      id="contacts"
+    >
       <div>
         <h5 className="text-xl font-bold my-2">Let{"'"}s Connect</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
@@ -31,12 +67,13 @@ const EmailSecction = () => {
         </div>
       </div>
       <div>
-        <form action="" className="flex flex-col ">
+        <form className="flex flex-col " onSubmit={handleSubmit}>
           <div className="mb-6">
             <label htmlFor="email" className="block text-base mb-2 font-medium">
               Your Email
             </label>
             <input
+              name="email"
               type="email"
               id="email"
               required
@@ -49,7 +86,8 @@ const EmailSecction = () => {
               Subject
             </label>
             <input
-              type=""
+              name="subject"
+              type="text"
               id="subject"
               required
               placeholder="Add a subject"
@@ -76,6 +114,9 @@ const EmailSecction = () => {
           >
             Send Message
           </button>
+          {emailSubmitted && (
+            <p className="text-green-500 text-sm mt-2">Email sent succefully</p>
+          )}
         </form>
       </div>
     </section>

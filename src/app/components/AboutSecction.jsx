@@ -9,12 +9,13 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Nodejs</li>
-        <li>Nodejs</li>
-        <li>Nodejs</li>
-        <li>Nodejs</li>
-        <li>Nodejs</li>
-        <li>Nodejs</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>ReactJS</li>
+        <li>NodeJS</li>
+        <li>Astro</li>
+        <li>Tailwind</li>
+        <li>Flutter</li>
       </ul>
     ),
   },
@@ -23,10 +24,10 @@ const TAB_DATA = [
     id: "Certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>Uci</li>
-        <li>Uci</li>
-        <li>Uci</li>
-        <li>Uci</li>
+        <li>Primary Graduate</li>
+        <li>High school graduate</li>
+        <li>Pre-University Graduate</li>
+        <li>In the process of University</li>
       </ul>
     ),
   },
@@ -35,11 +36,11 @@ const TAB_DATA = [
     id: "Experience",
     content: (
       <ul className="list-disc pl-2">
-        <li>UCI</li>
-        <li>UCI</li>
-        <li>UCI</li>
-        <li>UCI</li>
-        <li>UCI</li>
+        <li>Creation of website for transportation.</li>
+        <li>Web application design.</li>
+        <li>Grocer.</li>
+        <li>Powder seller.</li>
+        <li>Rubber thief.</li>
       </ul>
     ),
   },
@@ -56,22 +57,22 @@ const AboutSecction = () => {
   };
 
   return (
-    <section className="">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl-gap-10 sm:py-16 xl:px-16">
+    <section className="" id="about">
+      <div className="md:grid h-screen md:grid-cols-2 gap-8 py-8 px-4 xl-gap-10 sm:py-16 xl:px-1">
         <Image
-          src="/images/portada.webp"
+          src="/images/fino.jpg"
           alt="About Me"
-          width={300}
-          height={300}
+          width={400}
+          height={400}
+          className="mt-2"
         />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+        <div className="mt-4 md:mt-0 text-left flex flex-col h-full ">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            Sint officia magna officia amet velit in sunt irure et do proident.
-            Eiusmod excepteur enim aliquip aute officia magna est. Irure
-            pariatur excepteur culpa incididunt est sit. Ullamco adipisicing
-            Lorem magna reprehenderit excepteur aliquip. Officia laborum minim
-            cillum enim labore consectetur.
+            Student at the University of Computer Science, passionate about
+            learning and applying my knowledge in the real world. I am looking
+            for a work environment that allows me to grow professionally and
+            contribute to society through technology.
           </p>
           <div className="flex flex-row justify-start mt-8 ">
             <TabButton

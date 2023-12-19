@@ -7,15 +7,15 @@ import MenuOverlay from "./MenuOverlay";
 const navLinks = [
   {
     title: "About",
-    path: "/about",
+    path: "#about",
   },
   {
     title: "Projects",
-    path: "/projects",
+    path: "#projects",
   },
   {
     title: "Contacts",
-    path: "/contacts",
+    path: "#contacts",
   },
 ];
 
@@ -28,8 +28,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full top-0 lef-0 right-0 z-10 bg-[#121212] ">
-      <div className="flex flex-wrap items-center justify-between mx-auto py-4 px-6">
+    <nav className="fixed w-full border-b border-[#1f2024] top-0 lef-0 right-0 z-10 bg-[#121212] ">
+      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto py-4 px-6">
         <Link
           href={"/"}
           className="text-2xl md:text-5xl text-white font-semibold"

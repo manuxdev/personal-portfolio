@@ -1,21 +1,25 @@
-import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSecction from "./components/AboutSecction";
 import ProjectsSection from "./components/ProjectsSection";
 import EmailSecction from "./components/EmailSecction";
-import Footer from "./components/Footer";
+
+import Achivement from "./components/Achivement";
+import Navbar from "./components/Navbar";
+
+export const metadata = {
+  title: "ManuxDev",
+  description: "Portfolio of Manuel Pantoja",
+};
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen ">
+    <div className="container mx-auto mt-24 px-12 py-6">
       <Navbar />
-      <div className="container mx-auto mt-24 px-12 py-6">
-        <HeroSection />
-        <AboutSecction />
-        <ProjectsSection />
-        <EmailSecction />
-      </div>
-      <Footer />
-    </main>
+      <HeroSection />
+      <Achivement />
+      <AboutSecction />
+      <ProjectsSection />
+      <EmailSecction />
+    </div>
   );
 }
