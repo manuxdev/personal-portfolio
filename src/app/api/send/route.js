@@ -9,7 +9,7 @@ export async function POST(request) {
   const { email, subject, message } = await request.json();
 
   try {
-    const data = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: fromEmail,
       to: ["manuxdev1010@gmail.com"],
       subject: subject,
@@ -22,7 +22,9 @@ export async function POST(request) {
         </>
       ),
     });
-
+    if (error) {
+      return Response.json({ error });
+    }
     return Response.json(data);
   } catch (error) {
     return Response.json({ error });
