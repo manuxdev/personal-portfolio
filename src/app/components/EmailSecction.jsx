@@ -32,10 +32,13 @@ const EmailSecction = () => {
     const response = await fetch(endpoint, options);
     // const resData = await response.json();
     // console.log(resData);
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      if (response.status === 200) {
+        console.log("Message sent.");
+        setEmailSubmitted(true);
+      }
     }
   };
   return (
