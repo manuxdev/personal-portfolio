@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 import ProjectsCard from "./ProjectsCard";
 import ProjectTag from "./ProjectTag";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const projectsData = [
   {
@@ -119,24 +119,26 @@ const ProjectsSection = () => {
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((t, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.2 }}
-          >
-            <ProjectsCard
-              key={t.id}
-              title={t.title}
-              description={t.description}
-              imgUrl={t.image}
-              tags={t.tag}
-              gitUrl={t.gitUrl}
-              previewUrl={t.previewUrl}
-              slug={t.slug}
-            />
-          </motion.li>
+          <AnimatePresence key={index}>
+            <motion.li
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              exit={{ width: 500 }}
+              transition={{ duration: 0.4, delay: index * 0.2 }}
+            >
+              <ProjectsCard
+                key={t.id}
+                title={t.title}
+                description={t.description}
+                imgUrl={t.image}
+                tags={t.tag}
+                gitUrl={t.gitUrl}
+                previewUrl={t.previewUrl}
+                slug={t.slug}
+              />
+            </motion.li>
+          </AnimatePresence>
         ))}
       </ul>
     </section>

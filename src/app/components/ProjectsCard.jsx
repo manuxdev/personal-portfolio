@@ -14,12 +14,11 @@ const ProjectsCard = ({
     <div className="cursor-pointer hover:scale-110 transition-all">
       <Link
         href={{
-          pathname: "/[slug]",
+          pathname: `/${slug}`,
           query: {
-            valor: "Esto es un valor",
+            title: title,
           },
         }}
-        as={`${slug}`}
       >
         <div
           className="h-52 md:h-72 rounded-t-xl relative group bg-zinc-500 "

@@ -23,7 +23,7 @@ const EmailSecction = () => {
       method: "POST",
 
       headers: {
-        "Content-Type": "aplication/json",
+        "Content-Type": "application/json",
       },
 
       body: JSONdata,
