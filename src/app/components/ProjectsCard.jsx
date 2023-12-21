@@ -17,6 +17,10 @@ const ProjectsCard = ({
           pathname: `/${slug}`,
           query: {
             title: title,
+            imgUrl: imgUrl,
+            description: description,
+            gitUrl: gitUrl,
+            previewUrl: previewUrl,
           },
         }}
       >
