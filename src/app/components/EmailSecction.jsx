@@ -57,14 +57,14 @@ const EmailSecction = () => {
           quis deserunt. Aliqua eiusmod tempor tempor.
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href={"/"}>
+          <Link href="https://github.com/manuxdev" target="_blank">
             <Image
               src={GithubIcon}
               alt="Github Icon"
               className="md:w-12 md:h-12 w-10 h-10"
             />
           </Link>
-          <Link href={"/"}>
+          <Link href="https://linkedin.com/in/manuel-pantoja" target="_blank">
             <Image
               src={LinkedinIcon}
               alt="Linkedin Icon"

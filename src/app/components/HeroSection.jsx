@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { HandleScroll } from "../utils/handleScroll";
 
 const HeroSection = () => {
   return (
@@ -38,20 +40,24 @@ const HeroSection = () => {
             </p>
           </div>
           <div>
-            <button
-              className="sm:px-6 sm:py-3 px-4 py-2 w-full text-sm sm:text-base sm:w-fit rounded-full mr-4 
+            <Link href="/#contacts" onClick={HandleScroll}>
+              <button
+                className="sm:px-6 sm:py-3 px-4 py-2 w-full text-sm sm:text-base sm:w-fit rounded-full mr-4 
             bg-gradient-to-br from-governor-bay-200 via-governor-bay-600
              to-governor-bay-900 hover:bg-gradient-to-br hover:from-governor-bay-200
               hover:via-governor-bay-500 hover:to-governor-bay-700 hover:text-black font-extrabold transition-all"
-            >
-              Hire Me
-            </button>
-            <button
-              className="sm:px-6 sm:py-3 px-4 py-2 mt-4 w-full text-sm sm:text-base sm:w-fit rounded-full bg-transparent
+              >
+                Hire Me
+              </button>
+            </Link>
+            <a href="/images/fino.jpg" download="Curriculum">
+              <button
+                className="sm:px-6 sm:py-3 px-4 py-2 mt-4 w-full text-sm sm:text-base sm:w-fit rounded-full bg-transparent
              hover:bg-[#202020] text-white font-bold border-white hover:border-[#474747] border-2 transition-all"
-            >
-              Download CV
-            </button>
+              >
+                Download CV
+              </button>
+            </a>
           </div>
         </motion.div>
         <motion.div

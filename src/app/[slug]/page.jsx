@@ -2,11 +2,9 @@
 import { EyeIcon } from "@heroicons/react/24/outline";
 import { CodeBracketIcon } from "@heroicons/react/24/outline";
 import { ChevronLeftIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import { motion, AnimatePresence } from "framer-motion";
+// import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
-// import { useEffect, useState } from "react";
-
 EyeIcon;
 
 const ProjectPage = () => {
@@ -17,114 +15,55 @@ const ProjectPage = () => {
   const gitUrl = searchParams.get("gitUrl");
   const previewUrl = searchParams.get("previewUrl");
 
-  // const pathname = usePathname();
-  // const [imgVariants, setImgVariants] = useState();
-  // const [cardVariants, setCardVariants] = useState();
-  // const [textVariant, setTextVariant] = useState();
-  // useEffect(() => {
-  //   const previousPathname = localStorage.getItem("pathname");
-
-  //   if (previousPathname !== pathname) {
-  //     console.log("Pathname has changed");
-  //     // Aquí puedes realizar acciones basadas en el cambio de pathname
-  //     setImgVariants({
-  //       initial: {
-  //         y: 100,
-  //         height: 400,
-  //         width: 370,
-  //         borderRadius: "12px 12px 0 0",
-  //       },
-  //       animate: { y: 0, height: 350, width: "100%", borderRadius: 0 },
-  //     });
-  //     setCardVariants({
-  //       initial: {
-  //         y: 150,
-  //         height: 100,
-  //         width: 370,
-  //         borderRadius: 12,
-  //       },
-  //       animate: {
-  //         y: 0,
-  //         height: "auto",
-  //         width: "100%",
-  //         borderRadius: "30px 30px 0 0",
-  //       },
-  //     });
-  //     setTextVariant({
-  //       textInitial: {
-  //         y: 150,
-  //         height: 100,
-  //         width: 370,
-  //         borderRadius: 12,
-  //       },
-  //       textAnimate: {
-  //         y: 0,
-  //         height: "auto",
-  //         width: "100%",
-  //         borderRadius: "30px 30px 0 0",
-  //       },
-  //     });
-  //   }
-
-  //   // Almacenar el pathname actual en el almacenamiento local antes de que la página se recargue
-  //   localStorage.setItem("pathname", pathname);
-  // }, [pathname]);
-
-  const imgVariants = {
-    initial: {
-      y: 100,
-      height: 400,
-      width: 370,
-      borderRadius: "12px 12px 0 0",
-    },
-    animate: { y: 0, height: 350, width: "100%", borderRadius: 0 },
-  };
-  const cardVariants = {
-    initial: {
-      y: 150,
-      height: 100,
-      width: 370,
-      borderRadius: 12,
-    },
-    animate: {
-      y: 0,
-      height: "auto",
-      width: "100%",
-      borderRadius: "30px 30px 0 0",
-    },
-  };
-  const textVariant = {
-    textInitial: {
-      opacity: 0,
-      scale: 0,
-    },
-    textAnimate: {
-      opacity: 1,
-      scale: 1,
-    },
-  };
+  // const imgVariants = {
+  //   initial: {
+  //     y: 100,
+  //     height: 400,
+  //     width: 370,
+  //     borderRadius: "12px 12px 0 0",
+  //   },
+  //   animate: { y: 0, height: 350, width: "100%", borderRadius: 0 },
+  // };
+  // const cardVariants = {
+  //   initial: {
+  //     y: 150,
+  //     height: 100,
+  //     width: 370,
+  //     borderRadius: 12,
+  //   },
+  //   animate: {
+  //     y: 0,
+  //     height: "auto",
+  //     width: "100%",
+  //     borderRadius: "30px 30px 0 0",
+  //   },
+  // };
+  // const textVariant = {
+  //   textInitial: {
+  //     opacity: 0,
+  //     scale: 0,
+  //   },
+  //   textAnimate: {
+  //     opacity: 1,
+  //     scale: 1,
+  //   },
+  // };
 
   return (
     <div className="flex flex-col items-center">
-      <motion.div
-        variants={imgVariants}
-        initial="initial"
-        animate="animate"
-        transition={{ duration: 0.7 }}
-        className="h-52 md:h-[400px] group bg-gray-600 rounded-2xl"
+      <div
+        className="w-full group bg-gray-600  opacity-90 md:h-screen h-60 md:bg-[center,center] bg-center bg-no-repeat bg-cover"
         style={{
           backgroundImage: `url('${imgUrl}')`,
-          // backgroundColor: "white",
-          backgroundSize: "contain",
         }}
-      ></motion.div>
+      ></div>
 
-      <motion.div
-        variants={cardVariants}
-        initial="initial"
-        animate="animate"
-        transition={{ duration: 0.8 }}
-        className=" mt-[-80px] md:mt-[-100px] rounded-t-3xl bg-[#181818dc] py-6 md:px-12 px-4 "
+      <div
+        // variants={cardVariants}
+        // initial="initial"
+        // animate="animate"
+        // transition={{ duration: 0.8 }}
+        className=" mt-[-80px] md:mt-[-100px] border-t border-t-governor-bay-600 rounded-t-3xl bg-[#181818f8] py-6 md:px-12 px-4 z-10"
       >
         <div className="flex flex-row items-center justify-between">
           <div className="flex items-center">
@@ -158,13 +97,7 @@ const ProjectPage = () => {
             </Link>
           </div>
         </div>
-        <motion.div
-          initial="textInitial"
-          animate="textAnimate"
-          transition={{ delay: 0.8 }}
-          variants={textVariant}
-          className=" py-24 md:px-24 px-5"
-        >
+        <div className=" py-24 md:px-24 px-5">
           Do cupidatat consectetur ex voluptate proident elit non nisi est
           laborum. Deserunt cillum consectetur irure officia. Cillum sint qui ut
           nostrud. Consequat mollit cillum proident non nulla sint aliqua id
@@ -184,10 +117,9 @@ const ProjectPage = () => {
           pariatur ipsum est aliqua commodo nisi. Excepteur sit quis et proident
           non consequat tempor aute dolor quis deserunt in ea. Sunt fugiat sunt
           aliqua qui est ullamco esse ut excepteur. Est aute proident sint magna
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
-    // </AnimatePresence>
   );
 };
 

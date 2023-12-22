@@ -25,10 +25,9 @@ const Achivement = () => {
           return (
             <div
               key={index}
-              className="flex flex-col items-center justify-center md:mx-4 mx-2 relative"
+              className="flex flex-col items-center justify-center md:mx-4 mx-2 relative cursor-default"
             >
-              <div className=" rounded-full md:py-12 md:px-12 py-9 px-8 absolute cursor cursor-pointer hover:bg-[#1b1b5c36] transition-all duration-200"></div>
-              <h2 className="text-base  md:text-4xl  font-bold">
+              <h2 className="text-base  md:text-4xl  font-bold cursor-default">
                 {achivement.value}
               </h2>
               <p className="text-[#ADB7BE] md:text-base text-sm">
