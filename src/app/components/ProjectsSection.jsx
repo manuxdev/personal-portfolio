@@ -98,7 +98,7 @@ const ProjectsSection = () => {
   );
 
   const cardVariants = {
-    initial: { y: 50, opacity: 0 },
+    initial: { y: 80, opacity: 0 },
     animate: { y: 0, opacity: 1 },
   };
 
@@ -125,14 +125,15 @@ const ProjectsSection = () => {
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((t, index) => (
-          <AnimatePresence key={index}>
+        <AnimatePresence>
+          {filteredProjects.map((t, index) => (
             <motion.li
+              key={t.id}
               variants={cardVariants}
               initial="initial"
               animate={isInView ? "animate" : "initial"}
-              exit={{ width: 500 }}
-              transition={{ duration: 0.4, delay: index * 0.2 }}
+              exit={{ y: 50, opacity: 0 }}
+              transition={{ duration: 0.2, delay: index * 0.2 }}
             >
               <ProjectsCard
                 key={t.id}
@@ -146,8 +147,8 @@ const ProjectsSection = () => {
                 technologies={t.technologies}
               />
             </motion.li>
-          </AnimatePresence>
-        ))}
+          ))}
+        </AnimatePresence>
       </ul>
     </section>
   );

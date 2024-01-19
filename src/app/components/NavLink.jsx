@@ -6,7 +6,10 @@ const NavLink = ({ href, title }) => {
     <Link
       onClick={HandleScroll}
       href={href}
-      className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounder md:p-0 hover:text-white focus:text-white"
+      className="
+      block py-2 pl-3 pr-4 sm:text-xl rounder text-[#d3d3d3] md:p-0 
+      hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-governor-bay-200 hover:via-governor-bay-200 hover:to-governor-bay-800 
+      transition"
     >
       {title}
     </Link>

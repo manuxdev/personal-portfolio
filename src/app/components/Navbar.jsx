@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -28,14 +27,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full border-b border-[#1f2024] top-0 lef-0 right-0 z-10 bg-[#121212] ">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto py-4 px-6">
-        <Link
-          href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
-        >
-          Portfolio
-        </Link>
+    <nav className="w-full top-0 lef-0 right-0 mt-10">
+      <div className="flex container  flex-wrap items-center md:justify-center justify-end mx-auto px-6">
         <div className="mobile-menu block md:hidden">
           {navbarOpen ? (
             <button
