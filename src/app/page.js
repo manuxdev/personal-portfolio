@@ -13,9 +13,9 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="container mx-auto mt-10 md:px-12 px-6 py-2">
+    <div className=" lg:px-64 px-6 py-2">
       <HeroSection />
-      <Achivement />
+      {/* <Achivement /> */}
       <AboutSecction />
       <ProjectsSection />
       <EmailSecction />

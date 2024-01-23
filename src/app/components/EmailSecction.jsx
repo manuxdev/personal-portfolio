@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import GithubIcon from "../../../public/github.svg";
-import LinkedinIcon from "../../../public/linkedin.svg";
+import GithubIcon from "../../../public/github.jsx";
+import LinkedinIcon from "../../../public/linkedin.jsx";
 import Link from "next/link";
 import Image from "next/image";
+import Github from "../../../public/github.jsx";
+import Linkedin from "../../../public/linkedin.jsx";
 
 const EmailSecction = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -58,18 +60,10 @@ const EmailSecction = () => {
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="https://github.com/manuxdev" target="_blank">
-            <Image
-              src={GithubIcon}
-              alt="Github Icon"
-              className="md:w-12 md:h-12 w-10 h-10"
-            />
+            <Github className="md:w-12 md:h-12 w-10 h-10 fill-[#bdbcbc] hover:fill-white transition" />
           </Link>
           <Link href="https://linkedin.com/in/manuel-pantoja" target="_blank">
-            <Image
-              src={LinkedinIcon}
-              alt="Linkedin Icon"
-              className="md:w-12 md:h-12 w-10 h-10"
-            />
+            <Linkedin className="md:w-12 md:h-12 w-10 h-10 fill-[#bdbcbc] hover:fill-white transition" />
           </Link>
         </div>
       </div>

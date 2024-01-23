@@ -85,17 +85,17 @@ const projectsData = [
 ];
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("All");
+  // const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const handleChange = (newTag) => {
-    setTag(newTag);
-  };
+  // const handleChange = (newTag) => {
+  //   setTag(newTag);
+  // };
 
-  const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
-  );
+  // const filteredProjects = projectsData.filter((project) =>
+  //   project.tag.includes(tag)
+  // );
 
   const cardVariants = {
     initial: { y: 80, opacity: 0 },
@@ -103,11 +103,11 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section className="mt-52 md:mt-[-80px]" id="projects">
+    <section className="mt-24" id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-4">
         My Projects
       </h2>
-      <div className="flex flex-row justify-center items-center gap-2 py-6">
+      {/* <div className="flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleChange}
           name={"All"}
@@ -123,10 +123,10 @@ const ProjectsSection = () => {
           name={"Mobile"}
           isSelected={tag === "Mobile"}
         />
-      </div>
+      </div> */}
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         <AnimatePresence>
-          {filteredProjects.map((t, index) => (
+          {projectsData.map((t, index) => (
             <motion.li
               key={t.id}
               variants={cardVariants}

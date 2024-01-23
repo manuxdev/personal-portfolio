@@ -1,23 +1,60 @@
 "use client";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
+import { AnimatePresence, delay, motion } from "framer-motion";
 import Link from "next/link";
+
+import Github from "../../../public/github";
+import Email from "../../../public/email";
+import Linkedin from "../../../public/linkedin";
+import { useState } from "react";
 import { HandleScroll } from "../utils/handleScroll";
 
+const botones = [
+  {
+    title: "Linkedin",
+    href: "https://www.linkedin.com/in/manuel-pantoja/",
+    target: "_blank",
+    icon: (
+      <Linkedin className="fill-[#bdbcbc] group-hover:fill-white sm:w-7 sm:h-6 w-6 h-4 transition-all" />
+    ),
+  },
+  {
+    title: "GitHub",
+    href: "https://github.com/manuxdev",
+    target: "_blank",
+    icon: (
+      <Github className="fill-[#bdbcbc] group-hover:fill-white m:w-7 sm:h-6 w-6 h-4 transition-all" />
+    ),
+  },
+  {
+    title: "Email",
+    target: "",
+    href: "/#contacts",
+    icon: (
+      <Email className="fill-[#bdbcbc] group-hover:fill-white m:w-7 sm:h-6 w-6 h-4 transition-all" />
+    ),
+  },
+];
+
 const HeroSection = () => {
+  const [selectedId, setSelectedId] = useState(null);
+
   return (
-    <section>
-      <div className="grid grid-cols-1 sm:grid-cols-12">
+    <section className="xl:h-screen xl:pb-0 pb-28 h-auto flex items-start mt-10 justify-center">
+      <div className="flex flex-col-reverse sm:mt-7 mt-0 ">
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          className="col-span-8 place-self-center text-center sm:text-left"
+          transition={{ duration: 0.2 }}
+          className=" flex flex-col items-center justify-center  pt-10"
         >
-          <h1 className=" text-5xl sm:text-7xl mb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-governor-bay-200 via-governor-bay-800 ">
-            Hello, I am <br />
-            <span className="text-2xl sm:text-7xl text-white">
+          <h1
+            className=" text-2xl md:text-4xl mb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-governor-bay-200 via-governor-bay-600
+             to-governor-bay-900 "
+          >
+            Hello, I{"'"}m{" "}
+            <span className="text-2xl md:text-4xl text-white">
               <TypeAnimation
                 sequence={[
                   // Same substring at the start will only be typed out once, initially
@@ -33,52 +70,61 @@ const HeroSection = () => {
               />
             </span>
           </h1>
-          <div className="sm:w-10/12 ">
-            <p className="text-[#ADB7BE]  sm:text-left text-sm sm:text:lg sm mb-6 lg:text-xl">
+          <div className="md:w-10/12 ">
+            <p className="text-[#ADB7BE]  text-center text-sm  sm mb-4 lg:text-base">
               Student from the University of Computer Sciences with good web
-              design skills 😉
+              design skills asd😉
             </p>
           </div>
-          <div>
-            <Link href="/#contacts" onClick={HandleScroll}>
-              <button
-                className="sm:px-6 sm:py-3 px-4 py-2 w-full text-sm sm:text-base sm:w-fit rounded-full mr-4 
-            bg-gradient-to-br from-governor-bay-200 via-governor-bay-600
-             to-governor-bay-900 hover:bg-gradient-to-br hover:from-governor-bay-200
-              hover:via-governor-bay-500 hover:to-governor-bay-700 hover:text-black font-extrabold transition-all"
+          <div className="flex gap-5">
+            {botones.map((boton) => (
+              <Link
+                href={boton.href}
+                key={boton.title}
+                target={boton.target}
+                onClick={boton.title === "Email" && HandleScroll}
               >
-                Hire Me
-              </button>
-            </Link>
-            <a href="/images/fino.jpg" download="Curriculum">
-              <button
-                className="sm:px-6 sm:py-3 px-4 py-2 mt-4 w-full text-sm sm:text-base sm:w-fit rounded-full bg-transparent
-             hover:bg-[#202020] text-white font-bold border-white hover:border-[#474747] border-2 transition-all"
-              >
-                Download CV
-              </button>
-            </a>
+                <motion.button
+                  onMouseEnter={() => setSelectedId(boton.title)}
+                  onMouseLeave={() => setSelectedId(null)}
+                  className="md:px-4 md:py-2 px-3 py-2 w-full text-sm md:text-sm md:w-fit rounded-full  
+               bg-[#2C2C30] group-hover:bg-[#343438] text-[#bdbcbc]  hover:text-white font-extrabold transition-all flex items-center justify-center gap-1 group"
+                >
+                  <motion.div
+                    animate={
+                      selectedId === boton.title
+                        ? { rotate: [0, -30, 0, 30, 0] }
+                        : {}
+                    }
+                    transition={{ duration: 0.3 }}
+                  >
+                    {boton.icon}
+                  </motion.div>
+                  {boton.title}
+                </motion.button>
+              </Link>
+            ))}
           </div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          className="col-span-4 place-self-center mt-4 lg-mt-0"
+          transition={{ duration: 0.2 }}
+          className=" place-self-center mt-4 lg-mt-0"
         >
           <div
-            className="rounded-full bg-gradient-to-tr from-governor-bay-100
-           via-governor-bay-400 to-governor-bay-900 bg-[#161616] w-[250px] 
-           h-[250px] lg:w-[400px] lg:h-[400px] relative shadow-lg shadow-[#2c2c2c] "
+            className="
+                    flex justify-center items-center
+           "
           >
             <Image
-              className="absolute transform -translate-x-1/2 
-                lg:-translate-y-8 -translate-y-5 left-1/2 rounded-full"
+              className=" rounded-full bg-gradient-to-tr from-governor-bay-100
+              via-governor-bay-400 to-governor-bay-900 
+               w-[280px] h-[280px] shadow-lg shadow-[#2c2c2c] "
               src="/images/foto.png"
-              alt="Hero-image"
-              width={600}
-              height={600}
-              priority
+              alt="Manuxdev-photo"
+              width={280}
+              height={280}
             />
           </div>
         </motion.div>

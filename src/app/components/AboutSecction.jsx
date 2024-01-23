@@ -58,7 +58,7 @@ const AboutSecction = () => {
 
   return (
     <section className="" id="about">
-      <div className="md:grid h-screen md:grid-cols-2 gap-8 py-8 px-4 xl-gap-10 sm:py-16 xl:px-1">
+      <div className="md:grid  md:grid-cols-2 gap-8  px-4 xl-gap-10  xl:px-1">
         <Image
           src="/images/fino.jpg"
           alt="About Me"
@@ -66,7 +66,7 @@ const AboutSecction = () => {
           height={400}
           className="mt-2"
         />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full ">
+        <div className=" text-left flex flex-col h-full ">
           <h2 className="md:text-4xl text-3xl font-bold mb-4">About Me</h2>
           <p className="text-sm lg:text-lg">
             Student at the University of Computer Science, passionate about
