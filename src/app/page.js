@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className=" lg:px-64 px-6 py-2">
+    <div className=" lg:px-72 px-4 py-2">
       <HeroSection />
       {/* <Achivement /> */}
       <AboutSecction />

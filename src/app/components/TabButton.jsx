@@ -1,10 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import React from "react";
 
 const variants = {
-  default: { scale: 0 },
-  active: { scale: 1 },
+  default: { scale: 0, opacity: 0 },
+  active: { scale: 1, opacity: 1 },
 };
 
 const TabButton = ({ active, selectTab, children }) => {
@@ -18,7 +17,7 @@ const TabButton = ({ active, selectTab, children }) => {
       </p>
       <motion.div
         animate={active ? "active" : "default"}
-        transition={{ duration: 0.1 }}
+        transition={{ duration: 0.2 }}
         variants={variants}
         className="bg-governor-bay-500 mt-2 mr-3 h-[2px]"
       ></motion.div>

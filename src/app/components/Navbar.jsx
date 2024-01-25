@@ -17,7 +17,7 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <nav className="w-full top-0 lef-0 right-0 mt-8 z-50">
+    <nav className="w-full top-0 lef-0 right-0 mt-8 z-50 absolute">
       <div className="flex  items-center justify-center  mx-auto px-6">
         <div className="mobile-menu block md:hidden"></div>
         <div className="menu  md:block md:w-auto" id="navbar">

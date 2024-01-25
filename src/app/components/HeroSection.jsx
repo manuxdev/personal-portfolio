@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import { AnimatePresence, delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 import Github from "../../../public/github";
@@ -41,12 +41,12 @@ const HeroSection = () => {
   const [selectedId, setSelectedId] = useState(null);
 
   return (
-    <section className="xl:h-screen xl:pb-0 pb-28 h-auto flex items-start mt-10 justify-center">
+    <section className="sm:h-screen xl:pb-0 pb-28 h-auto flex items-center  justify-center mt-[120px] sm:mt-0">
       <div className="flex flex-col-reverse sm:mt-7 mt-0 ">
         <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.2 }}
+          initial={{ scale: 0, y: -150 }}
+          animate={{ scale: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className=" flex flex-col items-center justify-center  pt-10"
         >
           <h1
@@ -57,9 +57,9 @@ const HeroSection = () => {
             <span className="text-2xl md:text-4xl text-white">
               <TypeAnimation
                 sequence={[
-                  // Same substring at the start will only be typed out once, initially
+                  500,
                   `Software Engineer`,
-                  1000, // wait 1s before replacing "Mice" with "Hamsters"
+                  1000,
                   "FrontEnd Developer",
                   1000,
                   "Manuel Pantoja",
@@ -107,9 +107,9 @@ const HeroSection = () => {
           </div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.2 }}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
           className=" place-self-center mt-4 lg-mt-0"
         >
           <div

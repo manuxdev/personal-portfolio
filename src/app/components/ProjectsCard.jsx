@@ -68,28 +68,6 @@ const ProjectsCard = ({
             ))}
           </ul>
         </motion.div>
-        <Link
-          href={{
-            pathname: `/${slug}`,
-            query: {
-              title: title,
-              imgUrl: imgUrl,
-              description: description,
-              gitUrl: gitUrl,
-              previewUrl: previewUrl,
-            },
-          }}
-          target="_blank"
-          className="absolute right-0"
-        >
-          <Image
-            alt="salir"
-            src="/icons/salir.svg"
-            width={30}
-            height={30}
-            className="right-0 mr-4 mt-5 fill-red-600"
-          />
-        </Link>
       </div>
 
       <div className="rounded-b-xl mt-1 bg-[#181818] md:py-2 py-2 px-4 flex flex-row justify-center items-center">
@@ -99,20 +77,7 @@ const ProjectsCard = ({
             {description}
           </p>
         </div>
-        <div className="flex items-center  justify-between ">
-          {/* <Link
-            href=""
-            className="md:h-10 h-8 md:w-10 w-8 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-governor-bay-500 group/link transition-all"
-          >
-            <CodeBracketIcon className="md:h-6 md:w-6 h-4 w-4 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-governor-bay-500"></CodeBracketIcon>
-          </Link>
-          <Link
-            href=""
-            className="md:h-10 h-8 md:w-10 w-8 border-2 relative rounded-full border-[#ADB7BE] hover:border-governor-bay-500 group/link transition-all"
-          >
-            <EyeIcon className="md:h-6 md:w-6 h-4 w-4 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-governor-bay-500"></EyeIcon>
-          </Link> */}
-        </div>
+        <div className="flex items-center  justify-between "></div>
       </div>
     </div>
   );

@@ -1,85 +1,50 @@
 "use client";
-import Image from "next/image";
-import React, { useTransition, useState } from "react";
+
+import React, { useRef, useState } from "react";
 import TabButton from "./TabButton";
-
-const TAB_DATA = [
-  {
-    title: "Skills",
-    id: "skills",
-    content: (
-      <ul className="list-disc pl-2 text-sm md:text-base">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>ReactJS</li>
-        <li>NodeJS</li>
-        <li>Astro</li>
-        <li>Tailwind</li>
-        <li>Flutter</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Certifications",
-    id: "Certifications",
-    content: (
-      <ul className="list-disc pl-2 text-sm md:text-base">
-        <li>Primary Graduate</li>
-        <li>High school graduate</li>
-        <li>Pre-University Graduate</li>
-        <li>In the process of University</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Experience",
-    id: "Experience",
-    content: (
-      <ul className="list-disc pl-2 text-sm md:text-base">
-        <li>Creation of website for transportation.</li>
-        <li>Web application design.</li>
-        <li>Grocer.</li>
-        <li>Powder seller.</li>
-        <li>Rubber thief.</li>
-      </ul>
-    ),
-  },
-];
-
+import { datos } from "@/data/datos";
+import Link from "next/link";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 const AboutSecction = () => {
-  const [tab, setTab] = useState("skills");
-  const [isPending, startTransition] = useTransition();
-
+  const [tab, setTab] = useState("Experience");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const hadleTabChange = (id) => {
-    startTransition(() => {
-      setTab(id);
-    });
+    setTab(id);
+  };
+  const variants = {
+    initial: { y: 100, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+  const lineVariant = {
+    initialLine: { height: 0 },
+    animateLine: { height: "auto" },
   };
 
+  const datosfiltrados = datos.filter((item) => item.id === tab);
+
   return (
-    <section className="" id="about">
-      <div className="md:grid  md:grid-cols-2 gap-8  px-4 xl-gap-10  xl:px-1">
-        <Image
-          src="/images/fino.jpg"
-          alt="About Me"
-          width={400}
-          height={400}
-          className="mt-2"
-        />
+    <section className="h-screen" id="about">
+      <div className=" gap-8   xl-gap-10  px-3">
         <div className=" text-left flex flex-col h-full ">
-          <h2 className="md:text-4xl text-3xl font-bold mb-4">About Me</h2>
-          <p className="text-sm lg:text-lg">
+          <h2
+            className="text-2xl md:text-4xl mb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-governor-bay-200 via-governor-bay-600
+             to-governor-bay-900 "
+          >
+            About Me
+          </h2>
+          <p className="text-[#ADB7BE]   text-sm  sm mb-4 lg:text-base">
             Student at the University of Computer Science, passionate about
             learning and applying my knowledge in the real world. I am looking
             for a work environment that allows me to grow professionally and
             contribute to society through technology.
           </p>
-          <div className="flex flex-row justify-start mt-8 ">
+          <div className="flex flex-row justify-center mt-8 ">
             <TabButton
-              selectTab={() => hadleTabChange("skills")}
-              active={tab === "skills"}
+              selectTab={() => hadleTabChange("Experience")}
+              active={tab === "Experience"}
             >
-              Skills
+              Experience
             </TabButton>
             <TabButton
               selectTab={() => hadleTabChange("Certifications")}
@@ -87,16 +52,58 @@ const AboutSecction = () => {
             >
               Certifications
             </TabButton>{" "}
-            <TabButton
-              selectTab={() => hadleTabChange("Experience")}
-              active={tab === "Experience"}
-            >
-              Experience
-            </TabButton>
           </div>
-          <div className="md:mt-8 mt-4">
-            {TAB_DATA.find((t) => t.id === tab).content}
-          </div>
+          <div className="md:mt-8 mt-4"></div>
+
+          <AnimatePresence>
+            {datosfiltrados.map((el) => (
+              <motion.ol
+                initial="initialLine"
+                animate={isInView ? "animateLine" : "initialLine"}
+                key={el.id}
+                variants={lineVariant}
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                transition={{ duration: 1.5, delay: 0.4 }}
+                ref={ref}
+                className="relative border-s border-gray-700 dark:border-gray-700"
+              >
+                {el.elementos.map((subEl, index) => (
+                  <motion.li
+                    className="mb-10 ms-4"
+                    key={Object.values(subEl)[0].id}
+                    variants={variants}
+                    initial="initial"
+                    animate={isInView ? "animate" : "initial"}
+                    exit={{
+                      opacity: 0,
+                      transition: { duration: 0.3 },
+                    }}
+                    transition={{ duration: 0.6, delay: index * 0.7 }}
+                  >
+                    <motion.div className="absolute w-3 h-3 bg-governor-bay-400 rounded-full mt-1.5 -start-1.5 border border-governor-bay-400"></motion.div>
+
+                    <time className="mb-1 text-sm font-normal leading-none text-governor-bay-200 ">
+                      {Object.values(subEl)[0].time}
+                    </time>
+                    <h3 className="text-lg font-semibold text-white ">
+                      {Object.values(subEl)[0].h3}
+                    </h3>
+                    <p className="mb-4 text-base font-normal text-[#ADB7BE]">
+                      {Object.values(subEl)[0].p}
+                    </p>
+                    <Link href={Object.values(subEl)[0].href} target="_blank">
+                      <motion.button
+                        className="md:px-4 md:py-2 px-3 py-2 text-sm md:text-sm w-fit rounded-full  
+               bg-[#2C2C30] hover:bg-[#3f3f42] text-[#bdbcbc]  hover:text-governor-bay-300 font-extrabold transition-all flex items-center justify-center gap-1 group"
+                      >
+                        <div>See More ➡</div>
+                      </motion.button>
+                    </Link>
+                  </motion.li>
+                ))}{" "}
+              </motion.ol>
+            ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>
