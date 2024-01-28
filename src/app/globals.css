@@ -23,3 +23,29 @@ body {
   color: rgb(var(--foreground-rgb));
   background:#0A0A0A
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Estilo para el thumb de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Cambia esto al color que prefieras */
+  
+}
+
+/* Estilo para el track de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cambia esto al color que prefieras */
+}
+
+/* Estilo para la barra de desplazamiento en modo oscuro */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+      background: #555; /* Cambia esto al color que prefieras */
+      border-radius: 20px;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: #333; /* Cambia esto al color que prefieras */
+  }
+}
