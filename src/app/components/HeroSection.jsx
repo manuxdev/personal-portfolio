@@ -16,7 +16,7 @@ const botones = [
     href: "https://www.linkedin.com/in/manuel-pantoja/",
     target: "_blank",
     icon: (
-      <Linkedin className="fill-[#bdbcbc] group-hover:fill-white sm:w-7 sm:h-6 w-6 h-4 transition-all" />
+      <Linkedin className="fill-[#bdbcbc] group-hover:fill-governor-bay-300 sm:w-7 sm:h-6 w-6 h-4 transition-all" />
     ),
   },
   {
@@ -24,7 +24,7 @@ const botones = [
     href: "https://github.com/manuxdev",
     target: "_blank",
     icon: (
-      <Github className="fill-[#bdbcbc] group-hover:fill-white m:w-7 sm:h-6 w-6 h-4 transition-all" />
+      <Github className="fill-[#bdbcbc] group-hover:fill-governor-bay-300 m:w-7 sm:h-6 w-6 h-4 transition-all" />
     ),
   },
   {
@@ -32,7 +32,7 @@ const botones = [
     target: "",
     href: "/#contacts",
     icon: (
-      <Email className="fill-[#bdbcbc] group-hover:fill-white m:w-7 sm:h-6 w-6 h-4 transition-all" />
+      <Email className="fill-[#bdbcbc] group-hover:fill-governor-bay-300 m:w-7 sm:h-6 w-6 h-4 transition-all" />
     ),
   },
 ];
@@ -88,7 +88,7 @@ const HeroSection = () => {
                   onMouseEnter={() => setSelectedId(boton.title)}
                   onMouseLeave={() => setSelectedId(null)}
                   className="md:px-4 md:py-2 px-3 py-2 w-full text-sm md:text-sm md:w-fit rounded-full  
-               bg-[#2C2C30] group-hover:bg-[#343438] text-[#bdbcbc]  hover:text-white font-extrabold transition-all flex items-center justify-center gap-1 group"
+               bg-[#2C2C30] group-hover:bg-[#343438] text-[#bdbcbc]  hover:text-governor-bay-300 font-extrabold transition-all flex items-center justify-center gap-1 group"
                 >
                   <motion.div
                     animate={

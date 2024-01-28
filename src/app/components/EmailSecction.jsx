@@ -48,24 +48,13 @@ const EmailSecction = () => {
       className="grid md:grid-cols-2 my-12 md:my-12 py-12 gap-4"
       id="contacts"
     >
-      <div>
+      <div className="md:pr-10">
         <h5 className="text-xl font-bold my-2">Let{"'"}s Connect</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md text-sm md:text-base">
-          Aliqua proident aute veniam cillum et fugiat do irure culpa mollit ad
-          est ex aliquip proident. Ex irure exercitation culpa ad reprehenderit
-          fugiat tempor sint cupidatat irure mollit ex ea voluptate. Nulla minim
-          eiusmod occaecat sint sint ipsum officia aliqua occaecat sit excepteur
-          do. Ad nisi anim amet sunt excepteur irure commodo commodo nostrud
-          quis deserunt. Aliqua eiusmod tempor tempor.
+          Do you need more information about my projects or want to collaborate
+          on one? Do not doubt to keep in touch with me. I am open to new ideas
+          and always willing to learn and grow professionally.
         </p>
-        <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com/manuxdev" target="_blank">
-            <Github className="md:w-12 md:h-12 w-10 h-10 fill-[#bdbcbc] hover:fill-white transition" />
-          </Link>
-          <Link href="https://linkedin.com/in/manuel-pantoja" target="_blank">
-            <Linkedin className="md:w-12 md:h-12 w-10 h-10 fill-[#bdbcbc] hover:fill-white transition" />
-          </Link>
-        </div>
       </div>
       <div>
         <form className="flex flex-col " onSubmit={handleSubmit}>

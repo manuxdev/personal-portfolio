@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
 
         <Navbar />
 
-        <main className="flex flex-col min-h-screen ">
+        <main className="flex flex-col min-h-screen justify-center items-center">
           {/* <ViewTransition /> */}
           {children}
         </main>

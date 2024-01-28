@@ -1,6 +1,6 @@
 const Linkedin = ({ className }) => {
   return (
-    <svg className={className} viewBox="-5.5 3 25 25">
+    <svg className={className} viewBox="-5.5 3 30 25">
       <g id="SVGRepo_bgCarrier" strokeWidth="0" />
 
       <g
