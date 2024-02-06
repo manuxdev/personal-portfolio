@@ -1,5 +1,3 @@
-"use client";
-import { useState } from "react";
 import ProjectsCard from "./ProjectsCard";
 
 const projectsData = [
@@ -42,11 +40,6 @@ const projectsData = [
 ];
 
 const ProjectsSection = () => {
-  const cardVariants = {
-    initial: { y: 80, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
-
   return (
     <section className="mt-20" id="projects">
       <h2

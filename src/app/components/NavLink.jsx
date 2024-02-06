@@ -9,7 +9,7 @@ const NavLink = ({ href, title }) => {
       href={href}
       className="
       block sm:text-lg rounder text-[#d3d3d3]
-      hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-tr hover:from-governor-bay-200 hover:via-governor-bay-300 hover:to-governor-bay-400
+      hover:text-governor-bay-300
       transition"
     >
       {title}

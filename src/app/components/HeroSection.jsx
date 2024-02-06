@@ -41,7 +41,7 @@ const HeroSection = () => {
   const [selectedId, setSelectedId] = useState(null);
 
   return (
-    <section className="sm:h-screen xl:pb-0 pb-28 h-auto flex items-center  justify-center mt-[120px] sm:mt-0">
+    <section className=" pb-28 h-auto  flex items-center  justify-center mt-[150px] ">
       <div className="flex flex-col-reverse sm:mt-7 mt-0 ">
         <motion.div
           initial={{ scale: 0, y: -150 }}
@@ -50,11 +50,11 @@ const HeroSection = () => {
           className=" flex flex-col items-center justify-center  pt-10"
         >
           <h1
-            className=" text-2xl md:text-4xl mb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-governor-bay-200 via-governor-bay-600
+            className=" text-4xl md:text-6xl  mb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-governor-bay-200 via-governor-bay-600
              to-governor-bay-900 "
           >
-            Hello, I{"'"}m{" "}
-            <span className="text-2xl md:text-4xl text-white">
+            Hello, I{"'"}m <br />
+            <span className="text-4xl md:text-7xl text-white">
               <TypeAnimation
                 sequence={[
                   500,
@@ -72,8 +72,8 @@ const HeroSection = () => {
           </h1>
           <div className="md:w-10/12 ">
             <p className="text-[#ADB7BE]  text-center text-sm  sm mb-4 lg:text-base">
-              Student from the University of Computer Sciences with good web
-              design skills asd😉
+              Web developer passionate about modern technologies, with skills in
+              front-end design and development.
             </p>
           </div>
           <div className="flex gap-5">
@@ -104,28 +104,6 @@ const HeroSection = () => {
                 </motion.button>
               </Link>
             ))}
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.3 }}
-          className=" place-self-center mt-4 lg-mt-0"
-        >
-          <div
-            className="
-                    flex justify-center items-center
-           "
-          >
-            <Image
-              className=" rounded-full bg-gradient-to-tr from-governor-bay-100
-              via-governor-bay-400 to-governor-bay-900 
-               w-[280px] h-[280px] shadow-lg shadow-[#2c2c2c] "
-              src="/images/foto.png"
-              alt="Manuxdev-photo"
-              width={280}
-              height={280}
-            />
           </div>
         </motion.div>
       </div>

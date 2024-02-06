@@ -16,17 +16,17 @@ const AboutSecction = () => {
     initial: { y: 100, opacity: 0 },
     animate: { y: 0, opacity: 1 },
   };
-  const lineVariant = {
-    initialLine: { height: 100 },
-    animateLine: { height: "auto" },
-  };
+  // const lineVariant = {
+  //   initialLine: { height: 100 },
+  //   animateLine: { height: "auto" },
+  // };
 
   const datosfiltrados = datos.filter((item) => item.id === tab);
 
   return (
     <section className="" id="about">
       <div className=" gap-8   xl-gap-10  px-3">
-        <div className=" text-left flex flex-col h-full ">
+        <div className=" text-left flex flex-col ">
           <h2
             className="text-2xl md:text-4xl mb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-governor-bay-200 via-governor-bay-600
              to-governor-bay-900 "
@@ -34,10 +34,12 @@ const AboutSecction = () => {
             About Me
           </h2>
           <p className="text-[#ADB7BE]   text-sm  sm mb-4 lg:text-base">
-            Student at the University of Computer Science, passionate about
-            learning and applying my knowledge in the real world. I am looking
-            for a work environment that allows me to grow professionally and
-            contribute to society through technology.
+            I am a passionate web developer about to graduate from the
+            University of Computer Science, with a solid foundation in HTML, CSS
+            and JavaScript. Although my career path is relatively new, I have
+            gained valuable skills in modern frameworks like NextJS. I am
+            excited to apply my knowledge to create innovative solutions and
+            contribute to the world of web development.
           </p>
 
           <div className="flex flex-row justify-center mt-8 ">
@@ -55,16 +57,16 @@ const AboutSecction = () => {
             </TabButton>
           </div>
           <div className="md:mt-8 mt-4 ">
-            <ol
-              ref={ref}
-              className="relative border-s border-gray-700 dark:border-gray-700"
-            >
-              <AnimatePresence>
+            <AnimatePresence>
+              <ol
+                ref={ref}
+                className="relative  border-s border-gray-700 dark:border-gray-700"
+              >
                 {datosfiltrados.map((el) =>
                   el.elementos.map((subEl, index) => (
                     <motion.li
                       className="mb-10 ms-4"
-                      key={Object.values(subEl)[0].id}
+                      key={Object.values(subEl)[0].h3}
                       variants={variants}
                       initial="initial"
                       animate={isInView ? "animate" : "initial"}
@@ -72,7 +74,7 @@ const AboutSecction = () => {
                         opacity: 0,
                         transition: { duration: 0.1 },
                       }}
-                      transition={{ duration: 0.5, delay: index * 0.5 }}
+                      transition={{ duration: 0.5, delay: index * 0.6 }}
                     >
                       <motion.div className="absolute w-3 h-3 bg-governor-bay-400 rounded-full mt-1.5 -start-1.5 border border-governor-bay-400"></motion.div>
 
@@ -85,19 +87,19 @@ const AboutSecction = () => {
                       <p className="mb-4 text-base font-normal text-[#ADB7BE]">
                         {Object.values(subEl)[0].p}
                       </p>
-                      <Link href={Object.values(subEl)[0].href} target="_blank">
+                      {/* <Link href={Object.values(subEl)[0].href} target="_blank">
                         <motion.button
                           className="md:px-4 md:py-2 px-3 py-2 text-sm md:text-sm w-fit rounded-full  
             bg-[#2C2C30] hover:bg-[#3f3f42] text-[#bdbcbc] hover:text-governor-bay-300 font-extrabold transition-all flex items-center justify-center gap-1 group"
                         >
                           <div>See More ➡</div>
                         </motion.button>
-                      </Link>
+                      </Link> */}
                     </motion.li>
                   ))
                 )}
-              </AnimatePresence>
-            </ol>
+              </ol>
+            </AnimatePresence>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import ProjectsSection from "./components/ProjectsSection";
 import EmailSecction from "./components/EmailSecction";
 
 export const metadata = {
-  title: "ManuxDev",
+  title: "Manuel Pantoja | ManuxDev",
   description: "Portfolio of Manuel Pantoja",
 };
 
