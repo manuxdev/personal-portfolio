@@ -9,8 +9,17 @@ import Email from "../../../public/email";
 import Linkedin from "../../../public/linkedin";
 import { useState } from "react";
 import { HandleScroll } from "../utils/handleScroll";
+import Curriculum from "../../../public/doc";
 
 const botones = [
+  {
+    title: "Curriculum",
+    href: "/Manuel Pantoja.pdf",
+    target: "_blank",
+    icon: (
+      <Curriculum className="fill-[#bdbcbc] group-hover:fill-governor-bay-300 sm:w-7 sm:h-6 w-6 h-4 transition-all" />
+    ),
+  },,
   {
     title: "Linkedin",
     href: "https://www.linkedin.com/in/manuel-pantoja/",

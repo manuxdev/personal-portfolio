@@ -5,7 +5,7 @@ export const datos = [
     elementos: [
       {
         el1: {
-          time: "Enero 2024",
+          time: "January 2024",
           h3: "SQL Bassic Certificate",
           p: "HackerRank",
           href: "",
@@ -13,7 +13,7 @@ export const datos = [
       },
       {
         el2: {
-          time: "Enero 2024",
+          time: "January 2024",
           h3: "CSS Bassic Certificate",
           p: "HackerRank",
           href: "",
@@ -27,17 +27,17 @@ export const datos = [
     elementos: [
       {
         el1: {
-          time: "Enero 2024 - Acualidad",
+          time: "January 2024 - Present",
           h3: "Connecto | Social Campus",
-          p: "Aplicacion desarrollada con el fin de crear una red social Universitaria",
+          p: "Application developed in order to create a University social network as a final course project.",
           href: "",
         },
       },
       {
         el2: {
-          time: "Julio 2023 - Enero 2024",
-          h3: "Desarrollo como Freelance",
-          p: "Creacion de varios sistemas web y sitios asi como participacion en el desarrollo y diseño de proyectos en cooperacion de otros desarrolladores.",
+          time: "July 2023 - Present",
+          h3: "Development as Freelance",
+          p: "Creation of several websites as well as participation in the development and design of projects in cooperation with other developers.",
           href: "",
         },
       },

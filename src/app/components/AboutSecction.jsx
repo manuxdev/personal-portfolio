@@ -3,7 +3,7 @@
 import React, { useRef, useState } from "react";
 import TabButton from "./TabButton";
 import { datos } from "@/data/datos";
-import Link from "next/link";
+
 import { AnimatePresence, motion, useInView } from "framer-motion";
 const AboutSecction = () => {
   const [tab, setTab] = useState("Experience");
@@ -16,10 +16,6 @@ const AboutSecction = () => {
     initial: { y: 100, opacity: 0 },
     animate: { y: 0, opacity: 1 },
   };
-  // const lineVariant = {
-  //   initialLine: { height: 100 },
-  //   animateLine: { height: "auto" },
-  // };
 
   const datosfiltrados = datos.filter((item) => item.id === tab);
 
@@ -87,14 +83,6 @@ const AboutSecction = () => {
                       <p className="mb-4 text-base font-normal text-[#ADB7BE]">
                         {Object.values(subEl)[0].p}
                       </p>
-                      {/* <Link href={Object.values(subEl)[0].href} target="_blank">
-                        <motion.button
-                          className="md:px-4 md:py-2 px-3 py-2 text-sm md:text-sm w-fit rounded-full  
-            bg-[#2C2C30] hover:bg-[#3f3f42] text-[#bdbcbc] hover:text-governor-bay-300 font-extrabold transition-all flex items-center justify-center gap-1 group"
-                        >
-                          <div>See More ➡</div>
-                        </motion.button>
-                      </Link> */}
                     </motion.li>
                   ))
                 )}

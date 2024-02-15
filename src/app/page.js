@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="max-w-[800px] py-2 flex flex-col px-4">
+    <div className="max-w-[850px] py-2 flex flex-col px-4">
       <HeroSection />
 
       <AboutSecction />
