@@ -50,7 +50,7 @@ const HeroSection = () => {
   const [selectedId, setSelectedId] = useState(null);
 
   return (
-    <section className=" pb-28 h-auto  flex items-center  justify-center mt-[150px] ">
+    <section className=" sm:pb-28 pb-14 h-auto  flex items-center  justify-center mt-[150px] ">
       <div className="flex flex-col-reverse sm:mt-7 mt-0 ">
         <motion.div
           initial={{ scale: 0, y: -150 }}
@@ -63,7 +63,7 @@ const HeroSection = () => {
              to-governor-bay-900 "
           >
             Hello, I{"'"}m <br />
-            <span className="text-4xl md:text-7xl text-white">
+            <span className="text-4xl md:text-7xl text-white ">
               <TypeAnimation
                 sequence={[
                   500,
@@ -80,12 +80,12 @@ const HeroSection = () => {
             </span>
           </h1>
           <div className="md:w-10/12 ">
-            <p className="text-[#ADB7BE]  text-center text-sm  sm mb-4 lg:text-base">
+            <p className="text-[#ADB7BE]  text-center text-sm  sm mb-4 lg:text-base px-1">
               Web developer passionate about modern technologies, with skills in
               front-end design and development.
             </p>
           </div>
-          <div className="flex gap-5">
+          <div className="flex flex-wrap gap-5 justify-center ">
             {botones.map((boton) => (
               <Link
                 href={boton.href}
